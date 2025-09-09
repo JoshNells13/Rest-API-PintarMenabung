@@ -35,7 +35,7 @@ class FinancialController extends Controller
             'data'    => [
                 'summary' => $summary
             ]
-        ]);
+        ],200);
     }
 
 
@@ -65,6 +65,6 @@ class FinancialController extends Controller
             'data'    => [
                 'summary' => $summary
             ]
-        ]);
+        ],200);
     }
 }

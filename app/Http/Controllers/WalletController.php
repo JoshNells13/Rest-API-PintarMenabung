@@ -43,7 +43,7 @@ class WalletController extends Controller
                 'id' => $Wallets->id,
                 'currency_code' => $Wallets->Currency->name
             ]
-        ]);
+        ],200);
     }
 
     public function UpdateWalet(Request $request, $id)

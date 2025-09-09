@@ -38,7 +38,7 @@ class TransactionController extends Controller
                 'created_at' => $Transaction->created_at,
                 'id' => $Transaction->id,
             ]
-        ]);
+        ],200);
     }
 
     public function DeleteTransaction(Request $request, $id)
@@ -52,7 +52,7 @@ class TransactionController extends Controller
             return response([
                 'status' => 'error',
                 'message' => 'Forbidden access'
-            ]);
+            ],403);
         }
 
         if (!$Transaction) {
@@ -95,6 +95,8 @@ class TransactionController extends Controller
         // paginate otomatis dari Laravel
         $transactions = $query->paginate($perPage);
 
-        return response()->json($transactions);
+        return response([
+            $transactions
+        ],200);
     }
 }
